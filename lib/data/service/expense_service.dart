@@ -1,14 +1,47 @@
-import 'package:kontrol_app/core/network/dio_client.dart';
-import 'package:kontrol_app/data/model/dto/budget_dto.dart';
-import 'package:kontrol_app/data/model/dto/expense_category_dto.dart';
-import 'package:kontrol_app/data/model/response/api_response.dart';
+import 'package:kontar/core/network/dio_client.dart';
+import 'package:kontar/data/model/dto/budget_dto.dart';
+import 'package:kontar/data/model/dto/expense_category_dto.dart';
+import 'package:kontar/data/model/dto/expense_dto.dart';
+import 'package:kontar/data/model/request/category_request.dart';
+import 'package:kontar/data/model/response/api_response.dart';
 
 class ExpenseService {
   final DioClient _dioClient;
 
   ExpenseService(this._dioClient);
 
-  Future<ApiResponse<List<BudgetDto>>> allBudgets() async {
+  Future<ApiResponse<dynamic>> createExpense({
+    required double amount,
+    required String description,
+    required String photoUrl,
+    required int idCategory,
+  }) async {
+    final call = await _dioClient.post(
+      path: '/expense',
+      data: {
+        'amount': amount,
+        'description': description,
+        'photoUrl': photoUrl,
+        'idCategory': idCategory,
+      },
+    );
+    final response = ApiResponse.fromJson(
+      call.data,
+      (json) => null,
+    );
+    return response;
+  }
+
+  Future<ApiResponse<List<ExpenseDto>>> fetchExpenses() async {
+    final call = await _dioClient.get('/expense');
+    final response = ApiResponse.fromJson(
+      call.data,
+      (json) => (json as List).map((e) => ExpenseDto.fromJson(e)).toList(),
+    );
+    return response;
+  }
+
+  Future<ApiResponse<List<BudgetDto>>> fetchBudgets() async {
     final call = await _dioClient.get('/expense/budget');
     final response = ApiResponse.fromJson(
       call.data,
@@ -27,18 +60,12 @@ class ExpenseService {
     return response;
   }
 
-  Future<ApiResponse<dynamic>> createCategory({
-    required String name,
-    required int idIcon,
-    required int idColor,
-  }) async {
+  Future<ApiResponse<dynamic>> createCategory(
+    CreateCategoryRequest request,
+  ) async {
     final call = await _dioClient.post(
-      '/expense/category',
-      data: {
-        'name': name,
-        'idIcon': idIcon,
-        'idColor': idColor,
-      },
+      path: '/expense/category',
+      data: request.toJson(),
     );
     final response = ApiResponse.fromJson(
       call.data,

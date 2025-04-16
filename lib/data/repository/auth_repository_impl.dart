@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:kontrol_app/core/errors/failure.dart';
-import 'package:kontrol_app/core/storage/token_storage.dart';
-import 'package:kontrol_app/data/model/request/login_request.dart';
-import 'package:kontrol_app/data/service/auth_service.dart';
-import 'package:kontrol_app/domain/repository/auth_repository.dart';
+import 'package:kontar/core/errors/failure.dart';
+import 'package:kontar/core/storage/token_storage.dart';
+import 'package:kontar/data/model/request/login_request.dart';
+import 'package:kontar/data/service/auth_service.dart';
+import 'package:kontar/domain/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthService _authService;

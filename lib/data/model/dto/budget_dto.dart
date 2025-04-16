@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kontrol_app/core/utils/color_functions.dart';
-import 'package:kontrol_app/domain/model/budget.dart';
+import 'package:kontar/core/utils/color_functions.dart';
+import 'package:kontar/domain/model/budget.dart';
 
 part 'budget_dto.g.dart';
 

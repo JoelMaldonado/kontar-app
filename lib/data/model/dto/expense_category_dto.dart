@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kontrol_app/core/utils/color_functions.dart';
-import 'package:kontrol_app/data/model/dto/common_icon_dto.dart';
-import 'package:kontrol_app/domain/model/expense_category.dart';
+import 'package:kontar/core/utils/color_functions.dart';
+import 'package:kontar/data/model/dto/common_icon_dto.dart';
+import 'package:kontar/domain/model/expense_category.dart';
 
 part 'expense_category_dto.g.dart';
 

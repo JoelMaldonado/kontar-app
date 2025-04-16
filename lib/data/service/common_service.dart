@@ -1,7 +1,7 @@
-import 'package:kontrol_app/core/network/dio_client.dart';
-import 'package:kontrol_app/data/model/dto/common_color_dto.dart';
-import 'package:kontrol_app/data/model/dto/common_icon_dto.dart';
-import 'package:kontrol_app/data/model/response/api_response.dart';
+import 'package:kontar/core/network/dio_client.dart';
+import 'package:kontar/data/model/dto/common_color_dto.dart';
+import 'package:kontar/data/model/dto/common_icon_dto.dart';
+import 'package:kontar/data/model/response/api_response.dart';
 
 class CommonService {
   final DioClient _dioClient;

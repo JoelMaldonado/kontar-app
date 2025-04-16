@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kontrol_app/domain/model/common_color.dart';
-import 'package:kontrol_app/domain/model/common_icon.dart';
-import 'package:kontrol_app/domain/repository/common_repository.dart';
-import 'package:kontrol_app/domain/repository/expense_repository.dart';
+import 'package:kontar/domain/model/common_color.dart';
+import 'package:kontar/domain/model/common_icon.dart';
+import 'package:kontar/domain/repository/common_repository.dart';
+import 'package:kontar/domain/repository/expense_repository.dart';
 
 class FormCategoryProvider extends ChangeNotifier {
   final CommonRepository _commonRepo;

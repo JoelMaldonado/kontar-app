@@ -1,10 +1,12 @@
 import 'package:dartz/dartz.dart';
-import 'package:kontrol_app/core/errors/failure.dart';
-import 'package:kontrol_app/domain/model/budget.dart';
-import 'package:kontrol_app/domain/model/expense_category.dart';
+import 'package:kontar/core/errors/failure.dart';
+import 'package:kontar/domain/model/budget.dart';
+import 'package:kontar/domain/model/expense.dart';
+import 'package:kontar/domain/model/expense_category.dart';
 
 abstract class ExpenseRepository {
-  Future<Either<Failure, List<Budget>>> allBudgets();
+  Future<Either<Failure, List<Expense>>> fetchExpenses();
+  Future<Either<Failure, List<Budget>>> fetchBudgets();
   Future<Either<Failure, List<ExpenseCategory>>> fetchCategories();
 
   Future<Either<Failure, Unit>> createCategory({

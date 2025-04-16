@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kontrol_app/domain/model/common_color.dart';
+import 'package:kontar/domain/model/common_color.dart';
 
 part 'common_color_dto.g.dart';
 

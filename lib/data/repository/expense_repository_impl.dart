@@ -1,9 +1,11 @@
 import 'package:dartz/dartz.dart';
-import 'package:kontrol_app/core/errors/failure.dart';
-import 'package:kontrol_app/data/service/expense_service.dart';
-import 'package:kontrol_app/domain/model/budget.dart';
-import 'package:kontrol_app/domain/model/expense_category.dart';
-import 'package:kontrol_app/domain/repository/expense_repository.dart';
+import 'package:kontar/core/errors/failure.dart';
+import 'package:kontar/data/model/request/category_request.dart';
+import 'package:kontar/data/service/expense_service.dart';
+import 'package:kontar/domain/model/budget.dart';
+import 'package:kontar/domain/model/expense.dart';
+import 'package:kontar/domain/model/expense_category.dart';
+import 'package:kontar/domain/repository/expense_repository.dart';
 
 class ExpenseRepositoryImpl implements ExpenseRepository {
   final ExpenseService _service;
@@ -11,10 +13,24 @@ class ExpenseRepositoryImpl implements ExpenseRepository {
   ExpenseRepositoryImpl(this._service);
 
   @override
-  Future<Either<Failure, List<Budget>>> allBudgets() async {
+  Future<Either<Failure, List<Expense>>> fetchExpenses() async {
     try {
-      final res = await _service.allBudgets();
-      if (res.statusCode == 200) {
+      final res = await _service.fetchExpenses();
+      if (res.isSuccess()) {
+        return Right(res.data?.map((e) => e.toDomain()).toList() ?? []);
+      } else {
+        return Left(Failure(res.message));
+      }
+    } catch (e) {
+      return Left(Failure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<Budget>>> fetchBudgets() async {
+    try {
+      final res = await _service.fetchBudgets();
+      if (res.isSuccess()) {
         return Right(res.data?.map((e) => e.toDomain()).toList() ?? []);
       } else {
         return Left(Failure(res.message));
@@ -28,7 +44,7 @@ class ExpenseRepositoryImpl implements ExpenseRepository {
   Future<Either<Failure, List<ExpenseCategory>>> fetchCategories() async {
     try {
       final res = await _service.fetchCategories();
-      if (res.statusCode == 200) {
+      if (res.isSuccess()) {
         return Right(res.data?.map((e) => e.toDomain()).toList() ?? []);
       } else {
         return Left(Failure(res.message));
@@ -45,11 +61,12 @@ class ExpenseRepositoryImpl implements ExpenseRepository {
     required int idColor,
   }) async {
     try {
-      final res = await _service.createCategory(
+      final request = CreateCategoryRequest(
         name: name,
         idIcon: idIcon,
         idColor: idColor,
       );
+      final res = await _service.createCategory(request);
       if (res.isSuccess()) {
         return Right(unit);
       } else {

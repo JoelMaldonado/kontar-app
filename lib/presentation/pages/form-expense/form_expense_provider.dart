@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kontrol_app/domain/model/expense_category.dart';
-import 'package:kontrol_app/domain/repository/expense_repository.dart';
+import 'package:kontar/domain/model/expense_category.dart';
+import 'package:kontar/domain/repository/expense_repository.dart';
 
 class FormExpenseProvider extends ChangeNotifier {
   final ExpenseRepository _repo;

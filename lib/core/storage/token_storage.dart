@@ -1,4 +1,4 @@
-import 'package:kontrol_app/data/model/response/auth_response.dart';
+import 'package:kontar/data/model/response/auth_response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TokenStorage {

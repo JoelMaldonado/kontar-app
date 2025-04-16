@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:kontrol_app/core/di/di.dart';
-import 'package:kontrol_app/core/network/interceptors/auth_interceptor.dart';
-import 'package:kontrol_app/core/storage/token_storage.dart';
+import 'package:kontar/core/di/di.dart';
+import 'package:kontar/core/network/interceptors/auth_interceptor.dart';
+import 'package:kontar/core/storage/token_storage.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClient {
@@ -48,8 +48,8 @@ class DioClient {
     );
   }
 
-  Future<Response<T>> post<T>(
-    String path, {
+  Future<Response<T>> post<T>({
+    required String path,
     dynamic data,
     Map<String, dynamic>? queryParams,
     Options? options,

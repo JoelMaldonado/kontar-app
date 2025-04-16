@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kontrol_app/core/routes/app_paths.dart';
-import 'package:kontrol_app/core/storage/token_storage.dart';
+import 'package:kontar/core/routes/app_paths.dart';
+import 'package:kontar/core/storage/token_storage.dart';
 
 class SplashProvider extends ChangeNotifier {
   final TokenStorage _tokenStorage;

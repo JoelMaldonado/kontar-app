@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kontrol_app/core/routes/app_paths.dart';
-import 'package:kontrol_app/presentation/pages/login/login_provider.dart';
-import 'package:kontrol_app/presentation/widgets/app_button.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/core/routes/app_paths.dart';
+import 'package:kontar/presentation/pages/login/login_provider.dart';
+import 'package:kontar/presentation/widgets/app_button.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kontrol_app/presentation/pages/splash/splash_provider.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/presentation/pages/splash/splash_provider.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class SplashPage extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kontrol_app/domain/model/common_color.dart';
-import 'package:kontrol_app/domain/model/common_icon.dart';
-import 'package:kontrol_app/presentation/pages/form-category/form_category_provider.dart';
-import 'package:kontrol_app/presentation/widgets/app_button.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/domain/model/common_color.dart';
+import 'package:kontar/domain/model/common_icon.dart';
+import 'package:kontar/presentation/pages/form-category/form_category_provider.dart';
+import 'package:kontar/presentation/widgets/app_button.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class FormCategoryPage extends StatefulWidget {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kontrol_app/core/routes/app_paths.dart';
-import 'package:kontrol_app/presentation/widgets/app_button.dart';
+import 'package:kontar/core/routes/app_paths.dart';
+import 'package:kontar/presentation/widgets/app_button.dart';
 
 enum MenuOptions {
+  home,
   categories,
   budgets,
 }
@@ -94,6 +95,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   IconData _getIcon(MenuOptions option) {
     switch (option) {
+      case MenuOptions.home:
+        return Icons.home;
       case MenuOptions.categories:
         return Icons.category;
       case MenuOptions.budgets:
@@ -103,6 +106,8 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   String _getTitle(MenuOptions option) {
     switch (option) {
+      case MenuOptions.home:
+        return 'Inicio';
       case MenuOptions.categories:
         return 'Categorías';
       case MenuOptions.budgets:
@@ -113,10 +118,14 @@ class _HomeDrawerState extends State<HomeDrawer> {
   void _onOptionSelected(MenuOptions option) {
     final go = GoRouter.of(context);
     switch (option) {
+      case MenuOptions.home:
+        go.push(AppPaths.menu);
+        break;
       case MenuOptions.categories:
         go.push(AppPaths.categories);
         break;
       case MenuOptions.budgets:
+        go.push(AppPaths.budgets);
         break;
     }
   }

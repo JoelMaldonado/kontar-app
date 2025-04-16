@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kontrol_app/app.dart';
-import 'package:kontrol_app/app_providers.dart';
-import 'package:kontrol_app/core/di/di.dart';
+import 'package:kontar/app.dart';
+import 'package:kontar/app_providers.dart';
+import 'package:kontar/core/di/di.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 

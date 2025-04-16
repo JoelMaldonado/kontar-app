@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kontrol_app/core/routes/app_paths.dart';
-import 'package:kontrol_app/presentation/pages/categories/categories_provider.dart';
-import 'package:kontrol_app/presentation/pages/categories/components/card_category.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/core/routes/app_paths.dart';
+import 'package:kontar/presentation/pages/categories/categories_provider.dart';
+import 'package:kontar/presentation/pages/categories/components/card_category.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class CategoriesPage extends StatefulWidget {

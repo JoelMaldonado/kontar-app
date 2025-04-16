@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:kontrol_app/core/storage/token_storage.dart';
+import 'package:kontar/core/storage/token_storage.dart';
 
 class AuthInterceptor extends Interceptor {
   final TokenStorage _tokenStorage;

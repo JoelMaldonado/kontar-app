@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:kontrol_app/domain/repository/auth_repository.dart';
+import 'package:kontar/domain/repository/auth_repository.dart';
 
 class LoginProvider extends ChangeNotifier {
   final AuthRepository _authRepository;

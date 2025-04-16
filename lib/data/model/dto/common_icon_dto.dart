@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:kontrol_app/domain/model/common_icon.dart';
+import 'package:kontar/domain/model/common_icon.dart';
 
 part 'common_icon_dto.g.dart';
 

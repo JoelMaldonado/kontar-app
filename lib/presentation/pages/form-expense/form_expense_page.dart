@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:kontrol_app/presentation/pages/form-expense/form_expense_provider.dart';
-import 'package:kontrol_app/presentation/widgets/app_button.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/presentation/pages/form-expense/form_expense_provider.dart';
+import 'package:kontar/presentation/widgets/app_button.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class FormExpensePage extends StatefulWidget {

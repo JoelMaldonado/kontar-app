@@ -1,4 +1,4 @@
-name: kontrol_app
+name: kontar
 description: "A new Flutter project."
 publish_to: 'none'
 version: 1.0.0+1
@@ -29,7 +29,7 @@ dev_dependencies:
   json_serializable: ^6.9.4
 
 dependency_overrides:
-  analyzer: ^7.4.0
+  analyzer: ^6.2.0
 
 flutter:
   uses-material-design: true

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kontrol_app/core/routes/app_paths.dart';
-import 'package:kontrol_app/presentation/components/card_category.dart';
-import 'package:kontrol_app/presentation/pages/home/components/home_drawer.dart';
-import 'package:kontrol_app/presentation/pages/home/home_provider.dart';
-import 'package:kontrol_app/presentation/widgets/widgets.dart';
+import 'package:kontar/core/routes/app_paths.dart';
+import 'package:kontar/presentation/pages/home/components/home_drawer.dart';
+import 'package:kontar/presentation/pages/home/home_provider.dart';
+import 'package:kontar/presentation/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -50,16 +49,13 @@ class _HomePageState extends State<HomePage> {
       child: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 12,
-          children: provider.listBudgets.map((budget) {
-            return CardExpense(
-              name: budget.name,
-              gastoActual: budget.total,
-              presupuestoMaximo: budget.maxAmount,
-              color: budget.color,
-            );
-          }).toList(),
+          children: provider.listExpenses
+              .map(
+                (e) => Text(
+                  e.amount.toString(),
+                ),
+              )
+              .toList(),
         ),
       ),
     );

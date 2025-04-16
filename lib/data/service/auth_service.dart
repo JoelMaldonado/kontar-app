@@ -1,7 +1,7 @@
-import 'package:kontrol_app/core/network/dio_client.dart';
-import 'package:kontrol_app/data/model/request/login_request.dart';
-import 'package:kontrol_app/data/model/response/api_response.dart';
-import 'package:kontrol_app/data/model/response/auth_response.dart';
+import 'package:kontar/core/network/dio_client.dart';
+import 'package:kontar/data/model/request/login_request.dart';
+import 'package:kontar/data/model/response/api_response.dart';
+import 'package:kontar/data/model/response/auth_response.dart';
 
 class AuthService {
   final DioClient _dioClient;
@@ -12,7 +12,7 @@ class AuthService {
     LoginRequest request,
   ) async {
     final call = await _dioClient.post(
-      '/auth/login',
+      path: '/auth/login',
       data: request.toJson(),
     );
 

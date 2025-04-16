@@ -48,47 +48,7 @@ class _FormExpensePageState extends State<FormExpensePage> {
                 hint: "Opcional",
                 controller: provider.descriptionController,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 6,
-                children: [
-                  Text(
-                    'Foto',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: 90,
-                      height: 90,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.grey.shade300),
-                      ),
-                      child: const Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.camera_alt_outlined,
-                              color: Colors.grey,
-                            ),
-                            Text(
-                              'Tomar foto',
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              //_sectionPhoto(),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 6,
@@ -150,6 +110,50 @@ class _FormExpensePageState extends State<FormExpensePage> {
           ),
         ),
       ),
+    );
+  }
+
+  Column _sectionPhoto() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 6,
+      children: [
+        Text(
+          'Foto',
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            width: 90,
+            height: 90,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: const Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.camera_alt_outlined,
+                    color: Colors.grey,
+                  ),
+                  Text(
+                    'Tomar foto',
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: Colors.grey,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

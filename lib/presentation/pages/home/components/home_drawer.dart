@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kontrol_app/core/routes/app_paths.dart';
+import 'package:kontrol_app/presentation/widgets/app_button.dart';
 
 enum MenuOptions {
   categories,
@@ -8,8 +9,11 @@ enum MenuOptions {
 }
 
 class HomeDrawer extends StatefulWidget {
+  final VoidCallback logout;
+
   const HomeDrawer({
     super.key,
+    required this.logout,
   });
 
   @override
@@ -46,6 +50,43 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 )
                 .toList(),
           ),
+          ListTile(
+            leading: Icon(Icons.logout),
+            title: Text('Cerrar sesión'),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (_) {
+                  return AlertDialog(
+                    title: Text('Cerrar sesión'),
+                    content: Text('¿Está seguro de que desea cerrar sesión?'),
+                    actions: [
+                      Row(
+                        spacing: 16,
+                        children: [
+                          Expanded(
+                            child: AppButton(
+                              text: "Cancelar",
+                              onPressed: () => Navigator.of(context).pop(),
+                            ),
+                          ),
+                          Expanded(
+                            child: AppButton(
+                              text: "Si",
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                widget.logout();
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+          )
         ],
       ),
     );

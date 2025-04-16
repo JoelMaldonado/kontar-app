@@ -26,6 +26,7 @@ void diProviders() {
   getIt.registerFactory(
     () => HomeProvider(
       getIt<ExpenseRepository>(),
+      getIt<TokenStorage>(),
     ),
   );
 

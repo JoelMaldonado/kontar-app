@@ -29,11 +29,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<HomeProvider>(context);
+    provider.onLogout = () {
+      GoRouter.of(context).go(AppPaths.login);
+    };
     return AppScaffold(
       appBar: AppBar(
         title: const Text("Mis Gastos"),
       ),
-      drawer: HomeDrawer(),
+      drawer: HomeDrawer(
+        logout: provider.logout,
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           GoRouter.of(context).push(
@@ -42,17 +47,20 @@ class _HomePageState extends State<HomePage> {
         },
         child: const Icon(Icons.add),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12,
-        children: provider.listBudgets.map((budget) {
-          return CardExpense(
-            name: budget.name,
-            gastoActual: budget.total,
-            presupuestoMaximo: budget.maxAmount,
-            color: budget.color,
-          );
-        }).toList(),
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 12,
+          children: provider.listBudgets.map((budget) {
+            return CardExpense(
+              name: budget.name,
+              gastoActual: budget.total,
+              presupuestoMaximo: budget.maxAmount,
+              color: budget.color,
+            );
+          }).toList(),
+        ),
       ),
     );
   }

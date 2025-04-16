@@ -10,7 +10,6 @@ class SplashProvider extends ChangeNotifier {
   Function(String)? onSuccess;
 
   init() async {
-    await Future.delayed(const Duration(seconds: 2));
     final token = _tokenStorage.getAccessToken();
     if (token == null) {
       onSuccess?.call(AppPaths.login);

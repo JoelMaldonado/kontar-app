@@ -28,8 +28,9 @@ class _SplashPageState extends State<SplashPage> {
     final provider = Provider.of<SplashProvider>(context);
     provider.onSuccess = (route) => GoRouter.of(context).go(route);
     return AppScaffold(
-        child: Center(
-      child: CircularProgressIndicator(),
-    ));
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 }
